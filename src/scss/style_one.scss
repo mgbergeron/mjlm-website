@@ -1,0 +1,8 @@
+$color: 'blue';
+.style_one {
+    background-color: $color;
+
+    .inner_class {
+      border-radius: 40%;
+    }
+}
