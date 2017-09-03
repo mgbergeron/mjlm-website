@@ -8,7 +8,7 @@ var rename = require('gulp-rename');        //renames files
 var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
 
-var SCSS_SRC = ['src/sass/*.scss'];
+var SCSS_SRC = ['src/scss/*.scss'];
 
 var jsFiles = [
 	'node_modules/jquery/dist/jquery.min.js', 
@@ -30,7 +30,7 @@ gulp.task('scripts', function() {
 });
 
 
-gulp.task('sass', function() {
+gulp.task('scss', function() {
   gulp.src(SCSS_SRC)                          //reads all the SASS files
     .pipe(sass().on('error', sass.logError))  //compiles SASS to CSS and logs errors
     .pipe(autoprefixer(autoprefixerOptions))
@@ -50,17 +50,17 @@ gulp.task('copy', function () {
      .pipe(gulp.dest('build'))
 });
 
-gulp.task('serve', ['copy', 'sass', 'scripts'], function() {
+gulp.task('serve', ['copy', 'scss', 'scripts'], function() {
 	
 	browserSync.init({
 		server: "./build"
 	});
 	
-	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/sass/*.scss'], ['sass']);
+	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['scss']);
 	gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'src/js/*.js'], ['scripts']);
 	gulp.watch(['src/*.html'], ['copy']);
 	gulp.watch("build/*.html").on('change', browserSync.reload);
 });
 
 
-gulp.task('default', ['sass', 'scripts', 'serve']);
+gulp.task('default', ['scss', 'scripts', 'serve']);
