@@ -6,9 +6,19 @@ var minifyCss = require('gulp-minify-css'); //minifies css
 var concat = require('gulp-concat');        //joins multiple files into one
 var rename = require('gulp-rename');        //renames files
 var uglify = require('gulp-uglify');
+var autoprefixer = require('gulp-autoprefixer');
 
 var SCSS_SRC = ['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'];
-var jsFiles = ['src/js/*.js'];
+
+var jsFiles = [
+	'node_modules/jquery/dist/jquery.min.js', 
+	'node_modules/popper.js/dist/umd/popper.min.js', 
+	'node_modules/bootstrap/dist/js/bootstrap.min.js', 
+	'src/js/*.js'];
+
+var autoprefixerOptions = {
+  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+};
 
 gulp.task('scripts', function() {
     gulp.src(jsFiles)
@@ -23,6 +33,7 @@ gulp.task('scripts', function() {
 gulp.task('scss', function() {
   gulp.src(SCSS_SRC)                          //reads all the SASS files
     .pipe(sass().on('error', sass.logError))  //compiles SASS to CSS and logs errors
+    .pipe(autoprefixer(autoprefixerOptions))
     .pipe(minifyCss())                        //minifies the CSS files 
     .pipe(concat('style.css'))  //concatenates all the CSS files into one 
     .pipe(rename({              //renames the concatenated CSS file
