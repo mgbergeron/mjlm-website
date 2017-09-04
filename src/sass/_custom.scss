@@ -7,4 +7,45 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 $bg-color: #ffffff;
-$font-color: #000000;
+$primary-color: #D27F1B;
+$secondary-color: #D5981B;
+
+$spacer-x: 0.25em;
+
+h1 {
+	color: $primary-color !important;
+}
+
+h2 {
+	color: $secondary-color !important;
+}
+
+.m-6 {
+  margin: ($spacer-x * 3) !important;
+}
+
+.mt-6 {
+  margin-top: ($spacer-x * 9) !important;
+}
+
+.mr-6 {
+  margin-right: ($spacer-x * 3) !important;
+}
+
+.mb-6 {
+  margin-bottom: ($spacer-x * 9) !important;
+}
+
+.ml-6 {
+  margin-left: ($spacer-x * 3) !important;
+}
+
+.mx-6 {
+  margin-right: ($spacer-x * 3) !important;
+  margin-left: ($spacer-x * 3) !important;
+}
+
+.my-6 {
+  margin-top: ($spacer-x * 6) !important;
+  margin-bottom: ($spacer-x * 6) !important;
+}

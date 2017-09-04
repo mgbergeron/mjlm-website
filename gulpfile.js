@@ -44,13 +44,19 @@ gulp.task('sass', function() {
 	.pipe(browserSync.stream())
 });
 
-gulp.task('copy', function () {
+gulp.task('copyHtml', function () {
     gulp
      .src('src/*.html')
      .pipe(gulp.dest('build'))
 });
 
-gulp.task('serve', ['copy', 'sass', 'scripts'], function() {
+gulp.task('copyAssets', function () {
+    gulp
+     .src('src/assets/*')
+     .pipe(gulp.dest('build/assets'))
+});
+
+gulp.task('serve', ['copyHtml', 'copyAssets', 'sass', 'scripts'], function() {
 	
 	browserSync.init({
 		server: "./build"
@@ -58,8 +64,9 @@ gulp.task('serve', ['copy', 'sass', 'scripts'], function() {
 	
 	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/sass/*.scss'], ['sass']);
 	gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'src/js/*.js'], ['scripts']);
-	gulp.watch(['src/*.html'], ['copy']);
-	gulp.watch("build/*.html").on('change', browserSync.reload);
+	gulp.watch(['src/*.html'], ['copyHtml']);
+	gulp.watch(['src/assets/*'], ['copyAssets']);
+	gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
 
