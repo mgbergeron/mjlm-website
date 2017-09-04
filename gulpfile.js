@@ -7,10 +7,11 @@ var concat = require('gulp-concat');        //joins multiple files into one
 var rename = require('gulp-rename');        //renames files
 var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
+var php = require('gulp-connect-php');
 
-var SCSS_SRC = ['src/sass/*.scss'];
+var SRC_SCSS = ['src/sass/*.scss'];
 
-var jsFiles = [
+var SRC_JS = [
 	'node_modules/jquery/dist/jquery.min.js', 
 	'node_modules/popper.js/dist/umd/popper.min.js', 
 	'node_modules/bootstrap/dist/js/bootstrap.min.js', 
@@ -21,7 +22,7 @@ var autoprefixerOptions = {
 };
 
 gulp.task('scripts', function() {
-    gulp.src(jsFiles)
+    gulp.src(SRC_JS)
         .pipe(concat('scripts.js'))
         .pipe(rename('scripts.min.js'))
         .pipe(uglify())
@@ -31,7 +32,7 @@ gulp.task('scripts', function() {
 
 
 gulp.task('sass', function() {
-  gulp.src(SCSS_SRC)                          //reads all the SASS files
+  gulp.src(SRC_SCSS)                          //reads all the SASS files
     .pipe(sass().on('error', sass.logError))  //compiles SASS to CSS and logs errors
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(minifyCss())                        //minifies the CSS files 
@@ -44,13 +45,19 @@ gulp.task('sass', function() {
 	.pipe(browserSync.stream())
 });
 
-gulp.task('copy', function () {
+gulp.task('copyHtml', function () {
     gulp
-     .src('src/*.html')
+     .src(['src/*.html'])
      .pipe(gulp.dest('build'))
 });
 
-gulp.task('serve', ['copy', 'sass', 'scripts'], function() {
+gulp.task('copyAssets', function () {
+    gulp
+     .src('src/assets/**')
+     .pipe(gulp.dest('build/assets'))
+});
+
+gulp.task('serve', ['copyHtml', 'copyAssets', 'sass', 'scripts'], function() {
 	
 	browserSync.init({
 		server: "./build"
@@ -58,7 +65,8 @@ gulp.task('serve', ['copy', 'sass', 'scripts'], function() {
 	
 	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/sass/*.scss'], ['sass']);
 	gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'src/js/*.js'], ['scripts']);
-	gulp.watch(['src/*.html'], ['copy']);
+	gulp.watch(['src/*.html'], ['copyHtml']);
+	gulp.watch(['src/assets/**'], ['copyAssets']);
 	gulp.watch("build/*.html").on('change', browserSync.reload);
 });
 
