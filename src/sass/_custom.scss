@@ -10,7 +10,8 @@ $bg-color: #ffffff;
 $primary-color: #D27F1B;
 $secondary-color: #D5981B;
 
-$spacer-x: 0.25em;
+
+$spacer: 1em;
 
 h1 {
 	color: $primary-color !important;
@@ -21,31 +22,31 @@ h2 {
 }
 
 .m-6 {
-  margin: ($spacer-x * 3) !important;
+  margin: ($spacer * 3) !important;
 }
 
 .mt-6 {
-  margin-top: ($spacer-x * 9) !important;
+  margin-top: ($spacer * 3) !important;
 }
 
 .mr-6 {
-  margin-right: ($spacer-x * 3) !important;
+  margin-right: ($spacer * 3) !important;
 }
 
 .mb-6 {
-  margin-bottom: ($spacer-x * 9) !important;
+  margin-bottom: ($spacer * 3) !important;
 }
 
 .ml-6 {
-  margin-left: ($spacer-x * 3) !important;
+  margin-left: ($spacer * 3) !important;
 }
 
 .mx-6 {
-  margin-right: ($spacer-x * 3) !important;
-  margin-left: ($spacer-x * 3) !important;
+  margin-right: ($spacer * 3) !important;
+  margin-left: ($spacer * 3) !important;
 }
 
 .my-6 {
-  margin-top: ($spacer-x * 6) !important;
-  margin-bottom: ($spacer-x * 6) !important;
+  margin-top: ($spacer * 3) !important;
+  margin-bottom: ($spacer * 3) !important;
 }
