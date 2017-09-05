@@ -8,13 +8,20 @@ var rename = require('gulp-rename');        //renames files
 var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
 
-var SCSS_SRC = ['src/sass/*.scss'];
+var SCSS_SRC = [
+	'node_modules/bootstrap/scss/bootstrap.scss', 
+	'node_modules/font-awesome/scss/font-awesome.scss',
+	'src/sass/*.scss'];
 
 var jsFiles = [
+	'src/js/*.js'];
+
+var jsFilesmin = [
 	'node_modules/jquery/dist/jquery.min.js', 
 	'node_modules/popper.js/dist/umd/popper.min.js', 
 	'node_modules/bootstrap/dist/js/bootstrap.min.js', 
-	'src/js/*.js'];
+	'node_modules/jquery-validation/dist/jquery.validate.min.js', 
+	'node_modules/jquery-validation/dist/localization/messages_fr.js'];
 
 var autoprefixerOptions = {
   browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
@@ -44,9 +51,15 @@ gulp.task('sass', function() {
 	.pipe(browserSync.stream())
 });
 
+gulp.task('copyJsVendor', function () {
+    gulp
+     .src(jsFilesmin)
+     .pipe(gulp.dest('build/js'))
+});
+
 gulp.task('copyHtml', function () {
     gulp
-     .src('src/*.html')
+     .src('src/*')
      .pipe(gulp.dest('build'))
 });
 
@@ -56,17 +69,25 @@ gulp.task('copyAssets', function () {
      .pipe(gulp.dest('build/assets'))
 });
 
-gulp.task('serve', ['copyHtml', 'copyAssets', 'sass', 'scripts'], function() {
+gulp.task('copyFonts', function () {
+    gulp
+     .src('src/fonts/*')
+     .pipe(gulp.dest('build/fonts'))
+});
+
+gulp.task('serve', ['copyHtml', 'copyAssets', 'copyJsVendor', 'copyFonts', 'sass', 'scripts'], function() {
 	
 	browserSync.init({
 		server: "./build"
 	});
+
+	gulp.watch(['src/sass/*.scss'], ['sass']);
 	
-	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/sass/*.scss'], ['sass']);
-	gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'src/js/*.js'], ['scripts']);
-	gulp.watch(['src/*.html'], ['copyHtml']);
+	gulp.watch([jsFiles], ['scripts']);
+	gulp.watch(['src/*'], ['copyHtml']);
 	gulp.watch(['src/assets/*'], ['copyAssets']);
-	gulp.watch("src/*.html").on('change', browserSync.reload);
+	gulp.watch(['src/fonts/*'], ['copyFonts']);
+	gulp.watch("build/*").on('change', browserSync.reload);
 });
 
 
