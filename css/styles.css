@@ -10,6 +10,7 @@
  */
 html,
 body {
+  height: 100%;
   width: 100%; }
 
 body {
@@ -362,3 +363,64 @@ body {
 
 .portfolio-item {
   margin-bottom: 30px; }
+
+.m-6 {
+  margin: 3.5em !important; }
+
+.mt-6 {
+  margin-top: 3.5em !important; }
+
+.mr-6 {
+  margin-right: 3.5em !important; }
+
+.mb-6 {
+  margin-bottom: 3.5em !important; }
+
+.ml-6 {
+  margin-left: 3.5em !important; }
+
+.mx-6 {
+  margin-right: 3.5em !important;
+  margin-left: 3.5em !important; }
+
+.my-6 {
+  margin-top: 3.5em !important;
+  margin-bottom: 3.5em !important; }
+
+.background-image1 {
+  background-image: url("../img/DSC_0181.jpg"); }
+
+.background-image2 {
+  background-image: url("../img/DSC_0086.jpg"); }
+
+.background-image {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center; }
+  @media (min-width: 768px) {
+    .background-image {
+      height: 100%;
+      min-height: 400px; }
+      .background-image .header-content {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding: 0 50px; }
+        .background-image .header-content .header-content-inner {
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto; }
+          .background-image .header-content .header-content-inner h1 {
+            font-size: 50px; }
+          .background-image .header-content .header-content-inner p {
+            font-size: 18px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto; } }
