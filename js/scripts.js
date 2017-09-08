@@ -48,3 +48,9 @@
     }, 300);
 
 })(jQuery); // End of use strict
+
+$(function () {
+  $('[data-toggle="popover"]').popover({
+	  trigger: 'hover'
+  })
+})
