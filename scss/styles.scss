@@ -62,6 +62,11 @@ p {
     color: white;
 }
 
+.bg-darker {
+    background-color: $gray-darker !important;
+    color: white;
+}
+
 .bg-light {
     background-color: lighten($theme-primary, 46.7%) !important;
 }

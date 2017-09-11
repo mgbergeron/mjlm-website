@@ -52,6 +52,10 @@ p {
   background-color: #333333 !important;
   color: white; }
 
+.bg-darker {
+  background-color: #222222 !important;
+  color: white; }
+
 .bg-light {
   background-color: #fbefe0 !important; }
 
