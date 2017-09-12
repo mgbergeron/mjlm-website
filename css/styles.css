@@ -40,10 +40,45 @@ h5,
 h6 {
   font-family: 'Raleway', sans-serif; }
 
+h1 {
+  font-size: 28px; }
+  @media screen and (min-width: 480px) {
+    h1 {
+      font-size: 38px; } }
+  @media screen and (min-width: 640px) {
+    h1 {
+      font-size: 43px; } }
+  @media screen and (min-width: 1024px) {
+    h1 {
+      font-size: 56px; } }
+
+h2 {
+  font-size: 24px; }
+  @media screen and (min-width: 480px) {
+    h2 {
+      font-size: 25px; } }
+  @media screen and (min-width: 640px) {
+    h2 {
+      font-size: 26px; } }
+  @media screen and (min-width: 1024px) {
+    h2 {
+      font-size: 30px; } }
+
 p {
-  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px; }
+
+p, ul, ol {
+  font-size: 15px; }
+  @media screen and (min-width: 480px) {
+    p, ul, ol {
+      font-size: 16px; } }
+  @media screen and (min-width: 640px) {
+    p, ul, ol {
+      font-size: 17px; } }
+  @media screen and (min-width: 1024px) {
+    p, ul, ol {
+      font-size: 19px; } }
 
 .bg-primary {
   background-color: #D27F1B !important; }
