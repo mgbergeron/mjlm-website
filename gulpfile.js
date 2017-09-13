@@ -1,66 +1,113 @@
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
-var minify = require('gulp-minify');
-var minifyCss = require('gulp-minify-css'); //minifies css
-var concat = require('gulp-concat');        //joins multiple files into one
-var rename = require('gulp-rename');        //renames files
+var browserSync = require('browser-sync').create();
+var header = require('gulp-header');
+var cleanCSS = require('gulp-clean-css');
+var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
-var autoprefixer = require('gulp-autoprefixer');
+var pkg = require('./package.json');
 
-var SCSS_SRC = ['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'];
+// Set the banner content
+var banner = ['/*!\n',
+    ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+    ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+    ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n',
+    ' */\n',
+    ''
+].join('');
 
-var jsFiles = [
-	'node_modules/jquery/dist/jquery.min.js', 
-	'node_modules/popper.js/dist/umd/popper.min.js', 
-	'node_modules/bootstrap/dist/js/bootstrap.min.js', 
-	'src/js/*.js'];
+// Compiles SCSS files from /scss into /css
+gulp.task('sass', function() {
+    return gulp.src('scss/styles.scss')
+        .pipe(sass())
+        .pipe(header(banner, { pkg: pkg }))
+        .pipe(gulp.dest('css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+});
 
-var autoprefixerOptions = {
-  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-};
+// Minify compiled CSS
+gulp.task('minify-css', ['sass'], function() {
+    return gulp.src('css/styles.css')
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+});
 
-gulp.task('scripts', function() {
-    gulp.src(jsFiles)
-        .pipe(concat('scripts.js'))
-        .pipe(rename('scripts.min.js'))
+// Minify JS
+gulp.task('minify-js', function() {
+    return gulp.src('js/scripts.js')
         .pipe(uglify())
-        .pipe(gulp.dest('build/js')) //writes the renamed file to the destination
-    	.pipe(browserSync.stream())
+        .pipe(header(banner, { pkg: pkg }))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('js'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 });
 
+// Copy external libraries from /node_modules into /lib
+gulp.task('copy', function() {
+    gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
+        .pipe(gulp.dest('lib/bootstrap'))
 
-gulp.task('scss', function() {
-  gulp.src(SCSS_SRC)                          //reads all the SASS files
-    .pipe(sass().on('error', sass.logError))  //compiles SASS to CSS and logs errors
-    .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(minifyCss())                        //minifies the CSS files 
-    .pipe(concat('style.css'))  //concatenates all the CSS files into one 
-    .pipe(rename({              //renames the concatenated CSS file
-      basename : 'style',       //the base name of the renamed CSS file
-      extname : '.min.css'      //the extension fo the renamed CSS file
-    }))
-    .pipe(gulp.dest('build/css')) //writes the renamed file to the destination
-	.pipe(browserSync.stream())
+    gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
+        .pipe(gulp.dest('lib/jquery'))
+
+    gulp.src(['node_modules/magnific-popup/dist/*'])
+        .pipe(gulp.dest('lib/magnific-popup'))
+
+    gulp.src(['node_modules/scrollreveal/dist/*.js'])
+        .pipe(gulp.dest('lib/scrollreveal'))
+
+    gulp.src(['node_modules/tether/dist/js/*.js'])
+        .pipe(gulp.dest('lib/tether'))
+
+    gulp.src(['node_modules/popper.js/dist/umd/*.js', '!**/*.map'])
+        .pipe(gulp.dest('lib/popper.js'))
+
+    gulp.src(['node_modules/jquery-validation/dist/*.js', 'node_modules/jquery-validation/dist/localization/messages_fr.js'])
+        .pipe(gulp.dest('lib/jquery-validation'))
+
+    gulp.src(['node_modules/scrollreveal/dist/js/*.js'])
+        .pipe(gulp.dest('lib/scrollreveal'))
+
+    gulp.src(['node_modules/jquery-easing/dist/*.js', '!**/*.map'])
+        .pipe(gulp.dest('lib/jquery-easing'))
+
+    gulp.src([
+            'node_modules/font-awesome/**',
+            '!node_modules/font-awesome/**/*.map',
+            '!node_modules/font-awesome/.npmignore',
+            '!node_modules/font-awesome/*.txt',
+            '!node_modules/font-awesome/*.md',
+            '!node_modules/font-awesome/*.json'
+        ])
+        .pipe(gulp.dest('lib/font-awesome'))
+})
+
+// Run everything
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+
+// Configure the browserSync task
+gulp.task('browserSync', function() {
+    browserSync.init({
+        server: {
+            baseDir: ''
+        },
+    })
+})
+
+// Dev task with browserSync
+gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
+    gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('css/*.css', ['minify-css']);
+    gulp.watch('js/*.js', ['minify-js']);
+    // Reloads the browser whenever HTML or JS files change
+    gulp.watch('*.html', browserSync.reload);
+    gulp.watch('js/**/*.js', browserSync.reload);
 });
-
-gulp.task('copy', function () {
-    gulp
-     .src('src/*.html')
-     .pipe(gulp.dest('build'))
-});
-
-gulp.task('serve', ['copy', 'scss', 'scripts'], function() {
-	
-	browserSync.init({
-		server: "./build"
-	});
-	
-	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['scss']);
-	gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'src/js/*.js'], ['scripts']);
-	gulp.watch(['src/*.html'], ['copy']);
-	gulp.watch("build/*.html").on('change', browserSync.reload);
-});
-
-
-gulp.task('default', ['scss', 'scripts', 'serve']);
