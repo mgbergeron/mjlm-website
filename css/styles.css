@@ -56,13 +56,13 @@ h2 {
   font-size: 24px; }
   @media screen and (min-width: 480px) {
     h2 {
-      font-size: 25px; } }
+      font-size: 29px; } }
   @media screen and (min-width: 640px) {
     h2 {
-      font-size: 26px; } }
+      font-size: 33px; } }
   @media screen and (min-width: 1024px) {
     h2 {
-      font-size: 30px; } }
+      font-size: 40px; } }
 
 p {
   line-height: 1.5;
@@ -93,6 +93,20 @@ p, ul, ol {
 
 .bg-light {
   background-color: #fbefe0 !important; }
+
+.list-group-item.active {
+  background-color: #D27F1B !important;
+  border-color: #D27F1B !important; }
+
+.list-group-item-primary {
+  background-color: #D27F1B !important;
+  border-color: #D27F1B !important;
+  color: #eeeeee !important; }
+
+.list-group-item-secondary {
+  background-color: #fbefe0 !important;
+  border-color: #fbefe0 !important;
+  color: #222222 !important; }
 
 .text-faded {
   color: rgba(255, 255, 255, 0.7); }
