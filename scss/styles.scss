@@ -82,6 +82,23 @@ p, ul, ol {
     background-color: lighten($theme-primary, 46.7%) !important;
 }
 
+.list-group-item.active {
+    background-color: $theme-primary !important;
+    border-color: $theme-primary !important;
+}
+
+.list-group-item-primary {
+    background-color: $theme-primary !important;
+    border-color: $theme-primary !important;
+	color: $gray-lighter !important;
+}
+
+.list-group-item-secondary {
+    background-color: lighten($theme-primary, 46.7%) !important;
+    border-color: lighten($theme-primary, 46.7%) !important;
+	color: $gray-darker !important;
+}
+
 .text-faded {
     color: fade-out(white, 0.3);
 }
