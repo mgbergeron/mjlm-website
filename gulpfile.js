@@ -73,9 +73,6 @@ gulp.task('copy', function() {
     gulp.src(['node_modules/jquery-validation/dist/*.js', 'node_modules/jquery-validation/dist/localization/messages_fr.js'])
         .pipe(gulp.dest('lib/jquery-validation'))
 
-    gulp.src(['node_modules/scrollreveal/dist/js/*.js'])
-        .pipe(gulp.dest('lib/scrollreveal'))
-
     gulp.src(['node_modules/jquery-easing/dist/*.js', '!**/*.map'])
         .pipe(gulp.dest('lib/jquery-easing'))
 
