@@ -449,6 +449,21 @@ body {
   margin-top: 3.5em !important;
   margin-bottom: 3.5em !important; }
 
+.pt-7 {
+  padding-top: 4em !important; }
+
+.pr-7 {
+  padding-right: 4em !important; }
+
+.pb-7 {
+  padding-bottom: 4em !important; }
+
+.pl-7 {
+  padding-left: 4em !important; }
+
+.p-7 {
+  padding: 4em !important; }
+
 .timeline {
   position: relative;
   padding: 4px 0 0 0;
