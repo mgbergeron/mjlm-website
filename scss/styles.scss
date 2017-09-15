@@ -460,6 +460,26 @@ body {
 // -- Modern business
 
 
+.pt-7 {
+  padding-top: ($spacer * 4) !important;
+}
+
+.pr-7 {
+  padding-right: ($spacer * 4) !important;
+}
+
+.pb-7 {
+  padding-bottom: ($spacer * 4) !important;
+}
+
+.pl-7 {
+  padding-left: ($spacer * 4) !important;
+}
+
+.p-7 {
+  padding: ($spacer * 4) !important;
+}
+
   
 // Timeline
 .timeline {
