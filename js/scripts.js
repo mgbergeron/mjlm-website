@@ -1,5 +1,8 @@
 (function($) {
     "use strict"; // Start of use strict
+    
+    $('#welcomeModal').modal('show');
+    
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
