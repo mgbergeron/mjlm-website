@@ -55,6 +55,14 @@ h2 {
 	@include font-size($h2-font-sizes);
 }
 
+h3 {
+	@include font-size($h3-font-sizes);
+}
+
+h4 {
+	@include font-size($h4-font-sizes);
+}
+
 p {
     line-height: 1.5;
     margin-bottom: 20px;
@@ -62,15 +70,6 @@ p {
 
 p, ul, ol {
   @include font-size($p-font-sizes);
-}
-
-.bg-primary {
-    background-color: $theme-primary !important;
-}
-
-.bg-dark {
-    background-color: $gray-dark !important;
-    color: white;
 }
 
 .bg-darker {
@@ -337,6 +336,35 @@ header {
     padding-left: 0;
 }
 
+// Backgrounds
+.bg-primary {
+    background-color: $theme-primary !important;
+}
+
+.bg-dark {
+    background-color: $gray-dark !important;
+    color: white;
+}
+
+// List Styles
+
+.list-group-item.active {
+    background-color: $theme-primary !important;
+    border-color: $theme-primary !important;
+}
+
+.list-group-item-primary {
+    background-color: $theme-primary !important;
+    border-color: $theme-primary !important;
+	color: $gray-lighter !important;
+}
+
+.list-group-item-secondary {
+    background-color: lighten($theme-primary, 46.7%) !important;
+    border-color: lighten($theme-primary, 46.7%) !important;
+	color: $gray-darker !important;
+}
+
 // Button Styles
 .btn-default {
     @include button-variant($gray-darker,
@@ -364,6 +392,40 @@ header {
 
 .btn-xl {
     padding: 15px 30px;
+}
+
+.btn-xxl {
+    padding: 25px 50px;
+}
+
+// Alert styles
+
+.alert-primary {
+	color: $theme-primary !important;
+	background-color: lighten($theme-primary, 39.7%) !important;
+	border-color: lighten($theme-primary, 26.7%);
+}
+
+.alert-primary hr {
+	border-top-color: lighten($theme-primary, 20%) !important;
+}
+
+.alert-primary .alert-link {
+  color: darken($theme-primary, 2%);
+}
+
+.alert-secondary {
+	color: $gray-darker !important;
+	background-color: lighten($theme-primary, 46.7%) !important;
+	border-color: lighten($theme-primary, 46.7%) !important;
+}
+
+.alert-secondary hr {
+	border-top-color: lighten($theme-primary, 20%) !important;
+}
+
+.alert-secondary .alert-link {
+  color: darken($theme-primary, 2%);
 }
 
 // Extras
@@ -442,6 +504,26 @@ body {
 }
 // -- Modern business
 
+
+.pt-7 {
+  padding-top: ($spacer * 4) !important;
+}
+
+.pr-7 {
+  padding-right: ($spacer * 4) !important;
+}
+
+.pb-7 {
+  padding-bottom: ($spacer * 4) !important;
+}
+
+.pl-7 {
+  padding-left: ($spacer * 4) !important;
+}
+
+.p-7 {
+  padding: ($spacer * 4) !important;
+}
 
   
 // Timeline

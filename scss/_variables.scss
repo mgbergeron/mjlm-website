@@ -29,7 +29,21 @@ $h1-font-sizes: (
 
 $h2-font-sizes: (
   null  : 24px,
+  480px : 29px,
+  640px : 33px,
+  1024px: 40px
+);
+
+$h3-font-sizes: (
+  null  : 20px,
   480px : 25px,
-  640px : 26px,
+  640px : 30px,
+  1024px: 34px
+);
+
+$h4-font-sizes: (
+  null  : 19px,
+  480px : 23px,
+  640px : 27px,
   1024px: 30px
 );
