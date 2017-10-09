@@ -21,7 +21,7 @@ gulp.task('sass', function() {
     return gulp.src('src/main/webapp/scss/styles.scss')
         .pipe(sass())
         .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('src/main/webapp/css'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -32,7 +32,7 @@ gulp.task('minify-css', ['sass'], function() {
     return gulp.src('src/main/webapp/css/styles.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('src/main/webapp/css'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -44,7 +44,7 @@ gulp.task('minify-js', function() {
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest('src/main/webapp/js'))
         .pipe(browserSync.reload({
             stream: true
         }))
