@@ -1,3 +1,4 @@
+package com.majolime;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -8,6 +9,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
+
+import com.majolime.HelloAppEngine;
 
 /**
  * This mock class is created to enable basic unit testing of the
