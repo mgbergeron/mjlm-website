@@ -4,4 +4,4 @@ node_modules/
 /target/
 /build/
 /src/main/webapp/css/
-js/*.min.js
+/src/main/webapp/js/*.min.js
