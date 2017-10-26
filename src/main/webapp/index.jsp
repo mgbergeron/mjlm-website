@@ -166,6 +166,7 @@
 			</div>
 		</div>
 	    
+	    <jsp:include page="fragments/call-to-action.html" />
 	    <jsp:include page="fragments/footer.html" />
 
   </body>
