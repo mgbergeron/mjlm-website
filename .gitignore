@@ -2,6 +2,6 @@ lib/
 .settings/
 node_modules/
 /target/
-css/
-js/scripts.min.js
-js/scripts.js
+/build/
+/src/main/webapp/css/
+js/*.min.js
