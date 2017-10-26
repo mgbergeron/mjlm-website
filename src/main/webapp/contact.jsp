@@ -6,7 +6,7 @@
 
   <body>
   
-	    <jsp:include page="fragments/navbar.html" />
+	    <jsp:include page="fragments/navbar-dark.html" />
 
     <section>
     	<div class="container text-center mb-6">

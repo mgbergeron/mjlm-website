@@ -6,7 +6,7 @@
 
 	<body>
     
-	    <jsp:include page="fragments/navbar.html" />
+	    <jsp:include page="fragments/navbar-dark.html" />
 	
 	<section class="pb-0">
     	<div class="container text-center mb-6">
@@ -90,6 +90,7 @@
 		</div>
 	</section>
 	    
+	    <jsp:include page="fragments/call-to-action.html" />
 	    <jsp:include page="fragments/footer.html" />
 
   </body>
