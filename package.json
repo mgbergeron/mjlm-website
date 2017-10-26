@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0-beta.2",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
     "font-awesome": "^4.7.0",
@@ -23,7 +23,7 @@
     "jquery-validation": "^1.17.0",
     "magnific-popup": "^1.1.0",
     "pixrem": "^4.0.1",
-    "popper.js": "^1.12.5",
+    "popper.js": "^1.12.6",
     "postcss-flexbugs-fixes": "^3.2.0",
     "scrollreveal": "^3.3.6",
     "tether": "^1.4.0"
