@@ -13,7 +13,7 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
-	                	<h1 class="text-dark">Heureux d'être</h1>
+	                	<h1 class="text-dark">Heureux d'être test</h1>
 	                    <h2 class="section-heading text-white">L'un des plus grands producteurs d'argousier biologique québécois!</h2>
 	                    <hr class="light">
 	                    <p class="text-faded">Plus de 14 000 plants d'origine Russe.</p>
