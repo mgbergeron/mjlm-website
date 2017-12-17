@@ -4,6 +4,6 @@ lib/
 node_modules/
 /target/
 /build/
-/src/main/webapp/css/
+/src/main/webapp/resources/
 /src/main/webapp/js/*.min.js
 *.iml
