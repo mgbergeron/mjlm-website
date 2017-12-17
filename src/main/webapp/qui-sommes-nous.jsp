@@ -1,4 +1,6 @@
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,13 +100,14 @@
 			<div class="row">
 				<div class="col-lg-6 bg-white p-7">
 					<h2>2013 <small>- Le commencement</small></h2>
-					<p>
-						L’aventure familiale débute par l’achat d’une terre de 100 acres, située dans le Centre du Québec. Deux volets sont poursuivis par l’entreprise : 
-						<ol>
-							<li>Vente de plants d’argousier</li>
-							<li>Mise en place d’une argouseraie de plusieurs milliers de plants</li>
-						</ol>
-					</p>
+                    <p>
+						L’aventure familiale débute par l’achat d’une terre de 100 acres, située dans le Centre du Québec. Deux volets sont poursuivis par l’entreprise :
+                    </p>
+
+                    <ol>
+                        <li>Vente de plants d’argousier</li>
+                        <li>Mise en place d’une argouseraie de plusieurs milliers de plants</li>
+                    </ol>
 				</div>
 				<div class="col-lg-6 p-0">
 					<img src="img/2013.jpg" class="img-fluid w-100 h-100" alt="Champ attendant la plantation de plants d'argousier">

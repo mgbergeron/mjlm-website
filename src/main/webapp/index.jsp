@@ -1,4 +1,6 @@
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,21 +34,20 @@
 		      <div class="row">
 		        <div class="col-lg-6">
 					<p>Nous sommes une entreprise familiale faisant la vente de fruits d'argousier biologiques, gentiment nommés <em>argouses</em>. Cette petite baie de couleur orange se démarque de ce que l'on connait déjà en vente dans les super-marchés.</p>
-					<p>Ceci étant dit, il nous fait plaisir de vous accueillir parmi nous. Comment pouvons-nous vous être utile?
-						<ul>
-				            <li class="text-primary">
-				              <strong>Réservation de fruits d'argousier</strong>
-				            </li>
-				            <li>Achat de plants d'argousier</li>
-				            <li>Conseils pour votre plantation</li>
-			          </ul>
-					</p>
 					<p>
-						<div class="alert alert-primary" role="alert">Laissez-nous vous faire <a href="information-argousier.jsp" class="alert-link">découvrir l'argousier</a>, le super-fruit!</div>
-					</p>
+                        Ceci étant dit, il nous fait plaisir de vous accueillir parmi nous. Comment pouvons-nous vous être utile?
+                    </p>
+                    <ul>
+                        <li class="text-primary">
+                            <strong>Réservation de fruits d'argousier</strong>
+                        </li>
+                        <li>Achat de plants d'argousier</li>
+                        <li>Conseils pour votre plantation</li>
+                    </ul>
+                    <div class="alert alert-primary" role="alert">Laissez-nous vous faire <a href="information-argousier.jsp" class="alert-link">découvrir l'argousier</a>, le super-fruit!</div>
 		        </div>
 		        <div class="col-lg-6">
-		          <img class="img-fluid rounded" src="img/pancarte.jpg" alt="">
+		          <img class="img-fluid rounded" src="img/pancarte.jpg" alt="Pancarte de la Ferme Majolimé">
 		        </div>
 		      </div>
 		    </div>

@@ -39,7 +39,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.jsp">Contact</a>
             </li>
           </ul>
         </div>
@@ -56,7 +56,7 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Accueil</a>
+          <a href="index.jsp">Accueil</a>
         </li>
         <li class="breadcrumb-item">L'argousier</li>
         <li class="breadcrumb-item active">Bienfaits</li>
@@ -110,7 +110,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2 class="text-faded">N'attendez plus et contactez-nous dès maintenant pour une réservation!</h2>
-                <a href="contact.html" class="btn btn-default btn-xl sr-button">Réservez maintenant!</a>
+                <a href="contact.jsp" class="btn btn-default btn-xl sr-button">Réservez maintenant!</a>
             </div>
         </div>
     </aside>
