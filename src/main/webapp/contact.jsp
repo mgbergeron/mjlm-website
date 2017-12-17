@@ -98,8 +98,8 @@
 	</section>
 	    
 	    <jsp:include page="fragments/footer.jsp" />
-		<script src="lib/jquery-validation/jquery.validate.min.js"></script>
-		<script src="lib/jquery-validation/messages_fr.js"></script>
+		<script src="resources/lib/jquery-validation/jquery.validate.min.js"></script>
+		<script src="resources/lib/jquery-validation/messages_fr.js"></script>
 
 
   </body>

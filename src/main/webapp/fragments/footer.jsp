@@ -82,11 +82,11 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/popper.js/popper.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="resources/lib/jquery/jquery.min.js"></script>
+<script src="resources/lib/popper.js/popper.min.js"></script>
+<script src="resources/lib/bootstrap/js/bootstrap.min.js"></script>
 
-<script src="lib/jquery-easing/jquery.easing.1.3.umd.min.js"></script>
-<script src="lib/scrollreveal/scrollreveal.min.js"></script>
+<script src="resources/lib/jquery-easing/jquery.easing.1.3.umd.min.js"></script>
+<script src="resources/lib/scrollreveal/scrollreveal.min.js"></script>
 
-<script src="js/scripts.min.js"></script>
+<script src="resources/js/scripts.min.js"></script>
