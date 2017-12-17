@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<jsp:include page="fragments/head.html" />
+	<jsp:include page="fragments/head.jsp" />
 
 	<body>
     
-	    <jsp:include page="fragments/navbar.html" />
-	    <jsp:include page="fragments/header.html" />
+	    <jsp:include page="fragments/navbar.jsp" />
+	    <jsp:include page="fragments/header.jsp" />
 	
 	    <section class="bg-primary" id="bienvenue">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
-	                	<h1 class="text-dark">Heureux d'être test</h1>
+	                	<h1 class="text-dark">Heureux d'être</h1>
 	                    <h2 class="section-heading text-white">L'un des plus grands producteurs d'argousier biologique québécois!</h2>
 	                    <hr class="light">
 	                    <p class="text-faded">Plus de 14 000 plants d'origine Russe.</p>
@@ -42,7 +42,7 @@
 			          </ul>
 					</p>
 					<p>
-						<div class="alert alert-primary" role="alert">Laissez-nous vous faire <a href="information-argousier.html" class="alert-link">découvrir l'argousier</a>, le super-fruit!</div>
+						<div class="alert alert-primary" role="alert">Laissez-nous vous faire <a href="information-argousier.jsp" class="alert-link">découvrir l'argousier</a>, le super-fruit!</div>
 					</p>
 		        </div>
 		        <div class="col-lg-6">
@@ -166,8 +166,8 @@
 			</div>
 		</div>
 	    
-	    <jsp:include page="fragments/call-to-action.html" />
-	    <jsp:include page="fragments/footer.html" />
+	    <jsp:include page="fragments/call-to-action.jsp" />
+	    <jsp:include page="fragments/footer.jsp" />
 
   </body>
 

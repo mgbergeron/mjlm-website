@@ -1,8 +1,10 @@
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
-	<jsp:include page="fragments/head.html" />
+	<jsp:include page="fragments/head.jsp" />
 
   <body>
 
@@ -22,7 +24,7 @@
                 À propos
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownApropos">
-                <a class="dropdown-item" href="qui-sommes-nous.html">Qui sommes-nous</a>
+                <a class="dropdown-item" href="qui-sommes-nous.jsp">Qui sommes-nous</a>
                 <a class="dropdown-item" href="produits.html">Produits</a>
                 <a class="dropdown-item" href="photos.html">Photos</a>
               </div>
@@ -32,8 +34,8 @@
                 L'argousier
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownArgousier">
-                <a class="dropdown-item" href="bienfaits-argousier.html">Bienfaits</a>
-                <a class="dropdown-item" href="information-argousier.html">Information</a>
+                <a class="dropdown-item" href="bienfaits-argousier.jsp">Bienfaits</a>
+                <a class="dropdown-item" href="information-argousier.jsp">Information</a>
               </div>
             </li>
             <li class="nav-item">

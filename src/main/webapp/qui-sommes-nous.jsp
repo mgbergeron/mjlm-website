@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<jsp:include page="fragments/head.html" />
+	<jsp:include page="fragments/head.jsp" />
 
 	<body>
     
-	    <jsp:include page="fragments/navbar-dark.html" />
+	    <jsp:include page="fragments/navbar-dark.jsp" />
     
     <section>
     	<div class="container text-center mb-6">
@@ -20,7 +20,7 @@
 		   		<div class="col-lg-6 mt-5">
 		   			
 		          <h2>Producteur d'argousier québécois</h2>
-		          <p>Située dans la région du Centre-du-Québec, la Ferme Majolimé se spécialise dans la production de baies d'<a href="information-argousier.html" title="Cliquez pour consulter l'information sur l'argousier">argousier</a> <b>biologiques</b>. Nous sommes l'une des plus grosses <button type="button" class="btn btn-link" data-container="body" data-toggle="popover" data-placement="top" data-content="Un argouseraie est un champ de plants d'argousier">argouseraies</button> du Québec.</p>
+		          <p>Située dans la région du Centre-du-Québec, la Ferme Majolimé se spécialise dans la production de baies d'<a href="information-argousier.jsp" title="Cliquez pour consulter l'information sur l'argousier">argousier</a> <b>biologiques</b>. Nous sommes l'une des plus grosses <button type="button" class="btn btn-link" data-container="body" data-toggle="popover" data-placement="top" data-content="Un argouseraie est un champ de plants d'argousier">argouseraies</button> du Québec.</p>
 		          <p>Principalement dans la vente de fruits, nous pouvons également vous aider à démarrer ou à grossir votre plantation personnelle de plants d'argousier.</p>
 		          
 		          <br />
@@ -113,9 +113,9 @@
 	    </div>
 	    
 	</section>
-	    
-	    <jsp:include page="fragments/call-to-action.html" />
-	    <jsp:include page="fragments/footer.html" />
+
+	    <jsp:include page="fragments/call-to-action.jsp" />
+	    <jsp:include page="fragments/footer.jsp" />
 
   </body>
 

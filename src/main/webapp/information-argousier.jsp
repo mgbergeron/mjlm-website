@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<jsp:include page="fragments/head.html" />
+	<jsp:include page="fragments/head.jsp" />
 
 	<body>
     
-	    <jsp:include page="fragments/navbar-dark.html" />
+	    <jsp:include page="fragments/navbar-dark.jsp" />
 	
 	<section class="pb-0">
     	<div class="container text-center mb-6">
@@ -90,8 +90,8 @@
 		</div>
 	</section>
 	    
-	    <jsp:include page="fragments/call-to-action.html" />
-	    <jsp:include page="fragments/footer.html" />
+	    <jsp:include page="fragments/call-to-action.jsp" />
+	    <jsp:include page="fragments/footer.jsp" />
 
   </body>
 
