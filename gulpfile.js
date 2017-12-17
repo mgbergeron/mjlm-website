@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
@@ -22,9 +21,6 @@ gulp.task('sass', function() {
         .pipe(sass())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('src/main/webapp/resources/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 });
 
 // Minify compiled CSS
@@ -33,9 +29,6 @@ gulp.task('minify-css', ['sass'], function() {
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('src/main/webapp/resources/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 });
 
 // Minify JS
@@ -45,9 +38,6 @@ gulp.task('minify-js', function() {
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('src/main/webapp/resources/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 });
 
 // Copy external libraries from /node_modules into /lib
@@ -89,22 +79,3 @@ gulp.task('copy', function() {
 
 // Run everything
 gulp.task('default', ['copy', 'sass', 'minify-css', 'minify-js']);
-
-// Configure the browserSync task
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: 'src/main/webapp/'
-        }
-    })
-});
-
-// Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
-    gulp.watch('src/main/webapp/scss/*.scss', ['sass']);
-    gulp.watch('src/main/webapp/css/*.css', ['minify-css']);
-    gulp.watch('src/main/webapp/js/*.js', ['minify-js']);
-    // Reloads the browser whenever HTML or JS files change
-    gulp.watch('src/main/webapp/*.html', browserSync.reload);
-    gulp.watch('src/main/webapp/js/**/*.js', browserSync.reload);
-});
