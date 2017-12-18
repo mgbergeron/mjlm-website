@@ -1,9 +1,7 @@
-lib/
-.settings/
-/.idea/
+.idea/
 node_modules/
-/target/
-/build/
-/src/main/webapp/resources/
-/src/main/webapp/js/*.min.js
+node/
+target/
+src/main/webapp/resources/
+src/main/webapp/js/*.min.js
 *.iml
