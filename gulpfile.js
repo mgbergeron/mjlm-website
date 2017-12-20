@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
@@ -21,21 +20,15 @@ gulp.task('sass', function() {
     return gulp.src('src/main/webapp/scss/styles.scss')
         .pipe(sass())
         .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+        .pipe(gulp.dest('src/main/webapp/resources/css'))
 });
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
-    return gulp.src('src/main/webapp/css/styles.css')
+    return gulp.src('src/main/webapp/resources/css/styles.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+        .pipe(gulp.dest('src/main/webapp/resources/css'))
 });
 
 // Minify JS
@@ -44,37 +37,34 @@ gulp.task('minify-js', function() {
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+        .pipe(gulp.dest('src/main/webapp/resources/js'))
 });
 
 // Copy external libraries from /node_modules into /lib
 gulp.task('copy', function() {
     gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
-        .pipe(gulp.dest('src/main/webapp/lib/bootstrap'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/bootstrap'));
 
     gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-        .pipe(gulp.dest('src/main/webapp/lib/jquery'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/jquery'));
 
     gulp.src(['node_modules/magnific-popup/dist/*'])
-        .pipe(gulp.dest('src/main/webapp/lib/magnific-popup'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/magnific-popup'));
 
     gulp.src(['node_modules/scrollreveal/dist/*.js'])
-        .pipe(gulp.dest('src/main/webapp/lib/scrollreveal'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/scrollreveal'));
 
     gulp.src(['node_modules/tether/dist/js/*.js'])
-        .pipe(gulp.dest('src/main/webapp/lib/tether'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/tether'));
 
     gulp.src(['node_modules/popper.js/dist/umd/*.js', '!**/*.map'])
-        .pipe(gulp.dest('src/main/webapp/lib/popper.js'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/popper.js'));
 
     gulp.src(['node_modules/jquery-validation/dist/*.js', 'node_modules/jquery-validation/dist/localization/messages_fr.js'])
-        .pipe(gulp.dest('src/main/webapp/lib/jquery-validation'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/jquery-validation'));
 
     gulp.src(['node_modules/jquery-easing/dist/*.js', '!**/*.map'])
-        .pipe(gulp.dest('src/main/webapp/lib/jquery-easing'))
+        .pipe(gulp.dest('src/main/webapp/resources/lib/jquery-easing'));
 
     gulp.src([
             'node_modules/font-awesome/**',
@@ -84,27 +74,8 @@ gulp.task('copy', function() {
             '!node_modules/font-awesome/*.md',
             '!node_modules/font-awesome/*.json'
         ])
-        .pipe(gulp.dest('src/main/webapp/lib/font-awesome'))
-})
+        .pipe(gulp.dest('src/main/webapp/resources/lib/font-awesome'))
+});
 
 // Run everything
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
-
-// Configure the browserSync task
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: 'src/main/webapp/'
-        },
-    })
-})
-
-// Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
-    gulp.watch('src/main/webapp/scss/*.scss', ['sass']);
-    gulp.watch('src/main/webapp/css/*.css', ['minify-css']);
-    gulp.watch('src/main/webapp/js/*.js', ['minify-js']);
-    // Reloads the browser whenever HTML or JS files change
-    gulp.watch('src/main/webapp/*.html', browserSync.reload);
-    gulp.watch('src/main/webapp/js/**/*.js', browserSync.reload);
-});
+gulp.task('default', ['copy', 'sass', 'minify-css', 'minify-js']);

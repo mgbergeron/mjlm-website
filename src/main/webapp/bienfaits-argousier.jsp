@@ -1,27 +1,10 @@
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Ferme Majolimé - Bienfaits de l'argousier</title>
-    
-    <!-- Bootstrap Core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Additional fonts for this theme -->
-	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-	<link href="css/styles.min.css" rel="stylesheet">
-
-  </head>
+	<jsp:include page="fragments/head.jsp" />
 
   <body>
 
@@ -41,7 +24,7 @@
                 À propos
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownApropos">
-                <a class="dropdown-item" href="qui-sommes-nous.html">Qui sommes-nous</a>
+                <a class="dropdown-item" href="qui-sommes-nous.jsp">Qui sommes-nous</a>
                 <a class="dropdown-item" href="produits.html">Produits</a>
                 <a class="dropdown-item" href="photos.html">Photos</a>
               </div>
@@ -51,12 +34,12 @@
                 L'argousier
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownArgousier">
-                <a class="dropdown-item" href="bienfaits-argousier.html">Bienfaits</a>
-                <a class="dropdown-item" href="information-argousier.html">Information</a>
+                <a class="dropdown-item" href="bienfaits-argousier.jsp">Bienfaits</a>
+                <a class="dropdown-item" href="information-argousier.jsp">Information</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.jsp">Contact</a>
             </li>
           </ul>
         </div>
@@ -73,7 +56,7 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Accueil</a>
+          <a href="index.jsp">Accueil</a>
         </li>
         <li class="breadcrumb-item">L'argousier</li>
         <li class="breadcrumb-item active">Bienfaits</li>
@@ -127,7 +110,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2 class="text-faded">N'attendez plus et contactez-nous dès maintenant pour une réservation!</h2>
-                <a href="contact.html" class="btn btn-default btn-xl sr-button">Réservez maintenant!</a>
+                <a href="contact.jsp" class="btn btn-default btn-xl sr-button">Réservez maintenant!</a>
             </div>
         </div>
     </aside>
@@ -141,11 +124,11 @@
 	</footer>
 	
     <!-- Bootstrap core JavaScript -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/popper.js/popper.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/lib/jquery/jquery.min.js"></script>
+    <script src="resources/lib/popper.js/popper.min.js"></script>
+    <script src="resources/lib/bootstrap/js/bootstrap.min.js"></script>
 	
-	<script src="js/scripts.min.js"></script>
+	<script src="resources/js/scripts.min.js"></script>
 
   </body>
 

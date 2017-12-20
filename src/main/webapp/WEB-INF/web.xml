@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
     <servlet-name>HelloAppEngine</servlet-name>
-    <servlet-class>HelloAppEngine</servlet-class>
+    <servlet-class>com.majolime.HelloAppEngine</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloAppEngine</servlet-name>

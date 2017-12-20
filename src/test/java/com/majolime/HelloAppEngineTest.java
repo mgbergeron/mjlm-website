@@ -1,7 +1,10 @@
+package com.majolime;
 import java.io.IOException;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.majolime.HelloAppEngine;
 
 public class HelloAppEngineTest {
 
