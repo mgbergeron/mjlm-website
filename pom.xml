@@ -75,6 +75,16 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 
+		<!-- Optional URL to server. Default value is http://localhost:9000 -->
+		<sonar.host.url>
+			https://sonarcloud.io/
+		</sonar.host.url>
+		<sonar.login>
+			917c123c1e581cb36017d126a5c7e59f2824d222
+		</sonar.login>
+		<sonar.organization>
+			majolime
+		</sonar.organization>
         <sonar.exclusions>
             src/main/webapp/originals/**,
             src/main/webapp/img/**,
