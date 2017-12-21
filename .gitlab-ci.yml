@@ -18,3 +18,10 @@ maven_build:
   script:
     - echo "Building project with maven"
     - mvn verify
+
+test_sonar_job:
+  stage: test
+  script:
+    - mvn --batch-mode verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN
+  tags:
+    - docker
