@@ -1,6 +1,4 @@
-image: docker:latest
-services:
- - docker:dind
+image: maven:3-jdk-8
 
 stages:
   - build
@@ -8,8 +6,7 @@ stages:
   - deploy
 
 maven_build:
-  image: maven:3-jdk-8
-  stage: test
+  stage: build
   script:
     - mvn package
 
