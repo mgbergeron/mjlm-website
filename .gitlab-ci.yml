@@ -1,18 +1,11 @@
-image: maven:3-jdk-8
 
-stages:
-  - build
-  - test
-  - deploy
-
-maven_build:
-  stage: build
+pages:
   script:
-    - mvn package
-
-test_sonar_job:
-  stage: test
-  script:
-    - mvn --batch-mode verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN
-  tags:
-    - docker
+  - gem install jekyll
+  - jekyll build -d public/
+  - cp -r static/* public/
+  artifacts:
+    paths:
+    - public
+  only:
+  - pages
