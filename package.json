@@ -1,0 +1,30 @@
+{
+  "name": "infosysteme-website",
+  "version": "1.0.0",
+  "description": "Site Web infoSysteme",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "npm": "^6.0.1",
+    "popper.js": "^1.14.3",
+    "tether": "^1.4.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/mgbergeron/infosysteme-website.git"
+  },
+  "author": "mathieu@infosysteme.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mgbergeron/infosysteme-website/issues"
+  },
+  "homepage": "https://gitlab.com/mgbergeron/infosysteme-website#README"
+}
