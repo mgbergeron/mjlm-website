@@ -194,7 +194,7 @@ header {
     min-height: auto;
     @include background-cover;
     background-position: center;
-    background-image: url('../../static/img/header.jpg');
+    background-image: url('../static/img/header.jpg');
     text-align: center;
     color: white;
     .header-content {
