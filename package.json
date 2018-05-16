@@ -6,8 +6,11 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
+    "jquery.easing": "^1.4.1",
     "npm": "^6.0.1",
+    "popper": "^1.0.1",
     "popper.js": "^1.14.3",
+    "scrollreveal": "^3.4.0",
     "tether": "^1.4.4"
   },
   "devDependencies": {

@@ -3,9 +3,30 @@
 
 {% include head.html %}
 
-<body id="page-top">
+<body>
 
-  {% include content.html %}
+  {% if page.navbar_light %}
+    {% include navbar.html %}
+  {% else %}
+    {% include navbar-dark.html %}
+  {% endif %}
+
+  {% if page.homepage %}
+    {% include header.html %}
+  {% endif %}
+
+  <div class="page-content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </div>
+
+  {% unless page.contact %}
+    {% include call-to-action.html %}
+  {% endunless %}
+
+  {% include footer.html %}
+  {% include scripts.html %}
 
 </body>
 

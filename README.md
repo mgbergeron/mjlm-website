@@ -13,7 +13,7 @@ Implémentation d'une page d'accueil pour le domaine.
 
 # Développement
 1. Démarrer une machine Ubuntu
-2. npm install bootstrap jquery popper.js tether --save
+2. npm install bootstrap jquery popper.js tether scrollreveal jquery.easing --save
 3. npm install gulp gulp-sass --save-dev
 4. gulp
 
