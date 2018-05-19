@@ -26,6 +26,11 @@
   {% endunless %}
 
   {% include footer.html %}
+
+  {% if page.homepage and page.show_modal-reserve-fruits %}
+    {% include modal-reserve-fruits.html %}
+  {% endif %}
+
   {% include scripts.html %}
 
 </body>

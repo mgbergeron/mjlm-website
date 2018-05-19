@@ -15,7 +15,9 @@ Implémentation d'une page d'accueil pour le domaine.
 1. Démarrer une machine Ubuntu
 2. npm install bootstrap jquery popper.js tether scrollreveal jquery.easing --save
 3. npm install gulp gulp-sass --save-dev
-4. gulp
+4. Download font-awesome https://fontawesome.com/get-started/advanced-options
+5. Follow https://fontawesome.com/how-to-use/web-fonts-with-css#less-and-sass
+5. gulp
 
 
 ## Configurations:
