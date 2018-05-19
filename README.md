@@ -3,7 +3,7 @@
 
 ----
 
-View site: http://infosysteme.org
+View site: http://majolime.com
 
 ----
 
