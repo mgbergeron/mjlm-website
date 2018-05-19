@@ -3,11 +3,11 @@
 
 ----
 
-View site: http://majolime.com
+View site: https://majolime.com
 
 ----
 
-# Page d'atterrissage pour le domaine infosysteme.org
+# Site Web de la Ferme Majolimé
 
 Implémentation d'une page d'accueil pour le domaine.
 
