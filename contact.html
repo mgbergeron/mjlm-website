@@ -49,42 +49,21 @@ contact: true
 	  </div>
 	  <!-- /.row -->
 
-	<!--
-	  <div class="row">
-		<div class="col-lg-8 mb-4">
-		  <h3>Envoyez-nous un message</h3>
-		  <form name="sentMessage" id="contactForm" novalidate>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="name">Nom complet:</label>
-				<input type="text" class="form-control" id="name" required data-validation-required-message="SVP veuillez fournir votre nom.">
-				<p class="help-block"></p>
-			  </div>
-			</div>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="phone">Numéro de téléphone:</label>
-				<input type="tel" class="form-control" id="phone" required data-validation-required-message="SVP veuillez fournir votre numéro de téléphone.">
-			  </div>
-			</div>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="email">Adresse courriel:</label>
-				<input type="email" class="form-control" id="email" required data-validation-required-message="SVP veuillez fournir votre adresse courriel.">
-			  </div>
-			</div>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="message">Message:</label>
-				<textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="SVP veuillez fournir votre message" maxlength="999" style="resize:none"></textarea>
-			  </div>
-			</div>
-			<div id="success"></div>
-			<button type="submit" class="btn btn-primary">Envoyer le message</button>
-		  </form>
-		</div>
+	<form id="contact-form" class="contact-form" data-success="Message successfully sent!">
 
-	  </div>
- -->
+		<label for="name">Nom</label>
+		<input id="name" type="text" name="name" class="field" required autofocus /><br/>
+
+		<label for="email">Courriel</label>
+		<input id="email" type="email" name="email" class="field" required /><br/>
+
+		<label for="subject">Sujet</label>
+		<input id="subject" type="text" name="subject" class="field" required /><br/>
+
+		<label for="message">Message</label>
+		<textarea id="message" name="message" required></textarea><br/>
+
+		<button type="submit">Send</button>
+	</form>
 	</div>
 </section>
