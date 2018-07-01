@@ -9,15 +9,6 @@ contact: true
 	</div>
 
 	<div class="container">
-		<div class="alert alert-warning mb-6" role="alert">
-		  <h4 class="alert-heading">Veuillez prendre note que </h4>
-			<blockquote class="blockquote">
-				<p class="mb-0">Le formulaire de contact n'est présentement pas disponible. Veuillez SVP nous envoyer un <u>courriel</u> ou nous contacter <b><u>directement par téléphone</u></b>. Voir les informations plus ci-bas.</p>
-				<br />
-				<p class="mb-0">Merci de votre compréhension.</p>
-				<footer class="blockquote-footer">La direction</footer>
-			</blockquote>
-		</div>
 
 	  <!-- Content Row -->
 	  <div class="row">
@@ -49,42 +40,28 @@ contact: true
 	  </div>
 	  <!-- /.row -->
 
-	<!--
-	  <div class="row">
-		<div class="col-lg-8 mb-4">
-		  <h3>Envoyez-nous un message</h3>
-		  <form name="sentMessage" id="contactForm" novalidate>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="name">Nom complet:</label>
-				<input type="text" class="form-control" id="name" required data-validation-required-message="SVP veuillez fournir votre nom.">
-				<p class="help-block"></p>
-			  </div>
-			</div>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="phone">Numéro de téléphone:</label>
-				<input type="tel" class="form-control" id="phone" required data-validation-required-message="SVP veuillez fournir votre numéro de téléphone.">
-			  </div>
-			</div>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="email">Adresse courriel:</label>
-				<input type="email" class="form-control" id="email" required data-validation-required-message="SVP veuillez fournir votre adresse courriel.">
-			  </div>
-			</div>
-			<div class="control-group form-group">
-			  <div class="controls">
-				<label for="message">Message:</label>
-				<textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="SVP veuillez fournir votre message" maxlength="999" style="resize:none"></textarea>
-			  </div>
-			</div>
-			<div id="success"></div>
-			<button type="submit" class="btn btn-primary">Envoyer le message</button>
-		  </form>
-		</div>
+		<form id="contact-form" class="contact-form">
 
-	  </div>
- -->
+			<div class="messages"></div>
+
+			<h2>Formulaire en ligne </h2>
+			<div class="form-group">
+				<label for="name">Nom</label>
+				<input id="name" type="text" class="form-control form-control-lg" name="name" class="field" placeholder="Votre nom et votre prénom" required autofocus />
+			</div>
+			<div class="form-group">
+				<label for="email">Courriel</label>
+				<input id="email" type="email" class="form-control form-control-lg" name="email" class="field" placeholder="Votre adresse de courriel pour vous répondre" required />
+				<small id="emailHelp" class="form-text text-muted" aria-placeholder="Composez votre message et laissez-nous votre téléphone si nécessaire.">Nous ne sauvegardons aucune adresse courriel.</small>
+			</div>
+			<div class="form-group">
+				<label for="message">Message</label>
+				<textarea id="message" class="form-control" name="message" class="field" rows="5" required></textarea>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Envoyer le message</button>
+			</div>
+		</form>
 	</div>
 </section>
